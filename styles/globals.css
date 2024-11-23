@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Sidebar styling */
+body {
+  --sidebar-expanded-width: 16rem; /* Full width when expanded */
+  --sidebar-collapsed-width: 4rem; /* Small width when collapsed */
+}
+
+/* Main content styles for collapsible sidebar */
+main {
+  transition: margin-left 0.3s ease;
+}
+
+main.ml-16 {
+  margin-left: var(
+    --sidebar-collapsed-width
+  ); /* Margin for collapsed sidebar */
+}
+
+main.ml-64 {
+  margin-left: var(--sidebar-expanded-width); /* Margin for expanded sidebar */
+}
+
+/* Base styles for global elements */
+@layer base {
+  body {
+    @apply antialiased text-neutral-900 dark:text-white bg-white dark:bg-neutral-900 leading-relaxed;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-neutral-900 dark:text-white;
+  }
+
+  p {
+    @apply text-base text-neutral-700 dark:text-neutral-300 leading-relaxed;
+  }
+
+  a {
+    @apply text-primary-600 dark:text-primary-400 hover:underline;
+  }
+
+  ::selection {
+    @apply bg-primary-500 text-white;
+  }
+
+  ul,
+  ol {
+    @apply pl-6 list-disc list-inside text-neutral-700 dark:text-neutral-300;
+  }
+
+  img {
+    @apply rounded-lg shadow-md;
+  }
+
+  code,
+  pre {
+    @apply bg-neutral-100 dark:bg-neutral-800 text-sm text-neutral-900 dark:text-neutral-200 rounded-md px-2 py-1;
+  }
+}
+
+/* Component-level reusable styles */
+@layer components {
+  .prose {
+    @apply max-w-none text-neutral-700 dark:text-neutral-300;
+  }
+
+  .prose a {
+    @apply font-medium text-primary-600 dark:text-primary-400 no-underline hover:underline;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 dark:bg-primary-400 dark:hover:bg-primary-500;
+  }
+
+  .btn-secondary {
+    @apply bg-neutral-100 text-neutral-700 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300;
+  }
+
+  .form-input {
+    @apply block w-full px-4 py-3 border rounded-md text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-primary-500 focus:outline-none;
+  }
+
+  .form-label {
+    @apply text-sm font-medium text-neutral-900 dark:text-neutral-300 mb-1;
+  }
+
+  .form-textarea {
+    @apply block w-full px-4 py-3 border rounded-md text-neutral-900 dark:text-neutral-100 bg-white dark:bg-neutral-800 border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-primary-500 focus:outline-none;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mt-1;
+  }
+}
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-100 dark:bg-neutral-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300 dark:bg-neutral-600 rounded-md;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-400 dark:bg-neutral-500;
+}

@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://richardwhudsonjr.com
+
+# Sitemaps
+Sitemap: https://richardwhudsonjr.com/sitemap.xml
+Sitemap: https://richardwhudsonjr.com/server-sitemap.xml
